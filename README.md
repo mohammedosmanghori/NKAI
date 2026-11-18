@@ -1,112 +1,96 @@
-<div align="center">
+# Namma Kannada AI
 
-# 🌿 Namma Kannada AI 🌿
+AI-Assisted Interactive Kannada Learning & Practical Survival Companion for Karnataka.
 
-### AI-Assisted Interactive Kannada Learning & Practical Survival Companion for Karnataka
-*Bridge the linguistic gap for non-native speakers, migrants, tourists, and students in Karnataka.*
-
-[![React 19](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-7.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Gemini AI](https://img.shields.io/badge/Google_Gemini-3.8_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-
-[Live Demo](#-installation--setup) • [Core Features](#-core-features) • [Architecture](#-architecture) • [API Reference](#-api-endpoints) • [Hackathon Alignment](#-hackathon-judging-alignment)
-
-</div>
+[![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7.0-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Gemini AI](https://img.shields.io/badge/Google_Gemini-3.8_Flash-4285F4?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 ---
 
-## 🧭 The Problem It Solves
+## Project Overview
 
-Millions of professionals, students, and travelers moving to Bengaluru, Mysuru, and Mangaluru face everyday friction due to language barriers:
-- 🛺 **Auto-Rickshaw Negotiations:** Struggling to explain destinations or agree on meter fares.
-- ☕ **Darshinis & Dining:** Ordering filter coffee and masala dosas smoothly.
-- 🛑 **Decoding Signboards:** Missing critical traffic regulations, parking restrictions, metro routes, and bus destination boards written in Kannada script.
-- 📖 **Grammar Complexity:** Grasping Dravidian **Subject-Object-Verb (SOV)** sentence order and cultural honorifics (e.g., appending `-ru` to show deep respect for elders, mentors, and teachers).
+Namma Kannada AI is a full-stack web application designed to bridge the linguistic gap for non-native speakers, migrants, professionals, and students living, working, or traveling in Karnataka.
 
-**Namma Kannada AI** solves these challenges by combining instant verified offline phrasebooks with state-of-the-art multimodal AI.
+Newcomers to urban centers like Bengaluru, Mysuru, or Mangaluru frequently encounter daily communication friction:
+- Negotiating fares or routes with auto-rickshaw drivers.
+- Ordering meals at local darshinis and restaurants.
+- Decoding public notices, traffic regulations, metro maps, and bus destination boards written in Kannada script.
+- Understanding Dravidian grammatical conventions, such as Subject-Object-Verb (SOV) sentence structure and cultural honorifics (e.g., appending `-ru` to show respect for elders and mentors).
 
----
-
-## ✨ Core Features
-
-1. **Intelligent Bilingual Translation Engine (`/api/translate`)**
-   - Translates seamlessly from **English** or **Hindi** into natural, spoken Kannada.
-   - Outputs pristine Kannada script, intuitive Roman transliteration, word-by-word vocabulary breakdown, grammar explanations, polite formal variants, and cultural tips.
-2. **Multi-Tier Resilient Translation Architecture**
-   - *Tier 1:* Verified Karnataka Signboard Corpus (sub-10ms instant matching).
-   - *Tier 2:* Live Google Gemini AI (`gemini-3.8-flash`) for nuanced conversational sentences.
-   - *Tier 3:* Client-side offline fallback (`localTranslator.ts`) — guaranteed 100% uptime without failure.
-3. **Conversational Tutor (Roleplay Simulator)**
-   - 10 real-world daily scenarios (Auto Driver, Restaurant Server, Market Shopping, Asking Directions, Hospital, College, etc.).
-   - AI persona responses with native audio playback and smart suggested user replies.
-4. **Interactive Writing Lab**
-   - HTML5 Canvas stroke tracing for Kannada vowels (*Swara*), consonants (*Vyanjana*), conjuncts (*Ottakshara*), and numbers.
-   - Real-time touch/mouse support, ink customization, grid alignment, and celebration confetti on mastery.
-5. **Signboard OCR & Camera Reader**
-   - Instant visual inspection and translation of traffic signs, metro notices, and bus boards with practical commuter advice.
-6. **7-Day Survival Course & Spaced Repetition**
-   - Structured day-by-day foundational path with interactive quizzes, daily streaks, and flashcard memory coaching.
-7. **Voice Input & TTS Audio Playback**
-   - Web Speech API voice dictation (`en-US` / `hi-IN`) and server-streamed audio pronunciation (`/api/tts`).
-8. **Bilingual Onboarding & Secure Auth**
-   - Tailored onboarding wizard supporting English and Hindi UI, password authentication, and OTP login simulation backed by persistent `localStorage`.
+Namma Kannada AI addresses these challenges by combining verified offline phrasebooks, interactive writing practice, roleplay scenarios, and generative AI powered by the Google Gemini SDK.
 
 ---
 
-## 🏛️ Architecture
+## Key Features
+
+- **Bilingual Translation Engine**: Translates phrases from English or Hindi into spoken Kannada, providing Roman transliteration, word-by-word vocabulary breakdowns, grammar notes, polite variants, and cultural tips.
+- **Multi-Tier Translation Architecture**: Implements a resilient pipeline checking verified local phrase corpora first, falling back to live Gemini AI, and defaulting to a client-side linguistic rule engine to guarantee uptime.
+- **Conversational Tutor**: Provides roleplay practice across 10 real-world scenarios (auto-rickshaw negotiation, ordering food, market shopping, asking directions) with AI persona responses, audio pronunciation, and suggested replies.
+- **Interactive Writing Lab**: Offers an HTML5 Canvas drawing interface for stroke tracing of Kannada vowels (*Swara*), consonants (*Vyanjana*), conjuncts (*Ottakshara*), and numerals, complete with mastery feedback and confetti.
+- **Signboard OCR & Camera Reader**: Inspects traffic regulations, metro signs, and transit notices to provide actionable commuter advice.
+- **Structured Survival Curriculum**: Includes a 7-day foundational learning path, flashcard-based spaced repetition memory coaching, and streak tracking.
+- **Voice Input & TTS Audio Playback**: Supports voice dictation via the Web Speech API and native audio pronunciation streaming (`/api/tts`).
+- **User Authentication & Persistence**: Features bilingual onboarding (English/Hindi), password and OTP authentication simulation, and local storage state persistence.
+
+---
+
+## Technology Stack
+
+| Layer | Technology / Library | Description |
+| :--- | :--- | :--- |
+| **Frontend** | React 19, TypeScript, Vite 8 | Component-based UI rendering and type-safe state management. |
+| **Styling** | Tailwind CSS v4 (`@tailwindcss/vite`) | Utility-first styling framework and responsive design tokens. |
+| **Typography** | Google Fonts (*Anek Kannada*, *Plus Jakarta Sans*) | Kannada script rendering and clean UI typography. |
+| **Backend** | Node.js, Express.js, `tsx` | Full-stack server proxy, API routing, and static asset serving. |
+| **AI Integration** | `@google/genai` (Gemini 3.8 Flash) | Server-side text generation, translation, and structured JSON parsing. |
+| **Audio** | Web Speech API, Express TTS Proxy | Browser speech recognition and external TTS audio fetching. |
+| **Persistence** | `localStorage` + In-Memory Maps | Client-side user profiles/progress and server-side session/OTP management. |
+
+---
+
+## System Architecture
+
+The application operates as a client-server architecture where the React frontend communicates with an Express backend proxy. The backend manages secure communication with the Google Gemini API while maintaining local fallback mechanisms.
 
 ```mermaid
 graph TD
-    A[User / Browser Client] -->|HTTP POST / GET| B[Express.js Server (server.ts)]
-    B -->|1. Check Corpus Match| C[Curated Signboard / Phrase Database]
-    B -->|2. Query Gemini API| D[Google Gemini 3.8 Flash SDK]
-    B -->|3. Fallback Engine| E[Client Local Linguistic Fallback (localTranslator.ts)]
-    C --> A
-    D --> A
-    E --> A
+    Client[React Client SPA] -->|HTTP / API Requests| Server[Express Server / server.ts]
+    Server -->|1. Lookup| Corpus[Curated Signboard & Phrase Corpus]
+    Server -->|2. Generate| Gemini[Google Gemini SDK / gemini-3.8-flash]
+    Server -->|3. Fallback| LocalEngine[Client Local Translator / localTranslator.ts]
+    Corpus --> Client
+    Gemini --> Client
+    LocalEngine --> Client
 ```
 
 ---
 
-## 🛠️ Tech Stack
-
-| Category | Technologies & Libraries |
-| :--- | :--- |
-| **Frontend** | React 19, TypeScript, Vite 8, Tailwind CSS v4, Lucide React, Canvas Confetti |
-| **Typography** | Google Fonts (*Anek Kannada*, *Plus Jakarta Sans*) |
-| **Backend** | Node.js, Express.js, `tsx`, `server.ts` |
-| **AI / ML** | `@google/genai` TypeScript SDK, Gemini 3.8 Flash (`gemini-3.8-flash`) |
-| **Speech & Audio** | Web Speech API (SpeechRecognition), Server TTS Audio Streaming (`/api/tts`) |
-| **Storage & State** | `localStorage` + In-Memory Session & OTP Store |
-| **API Endpoints** | `POST /api/translate`, `POST /api/auth/login`, `POST /api/auth/register`, `POST /api/auth/generate-otp`, `POST /api/chat`, `GET /api/tts`, `GET /api/health` |
-
----
-
-## 📂 Repository Structure
+## Project Structure
 
 ```text
 /
-├── package.json
-├── server.ts
-├── vite.config.ts
-├── index.html
+├── package.json              # Project dependencies and build scripts
+├── server.ts                 # Express backend server and API endpoints
+├── vite.config.ts            # Vite bundler configuration
+├── index.html                # HTML entry point and font stylesheets
 └── src/
-    ├── App.tsx
-    ├── main.tsx
-    ├── index.css
+    ├── App.tsx               # Root component and tab state router
+    ├── main.tsx              # React DOM hydration entry point
+    ├── index.css             # Tailwind CSS imports and base styles
     ├── types/
-    │   └── index.ts
+    │   └── index.ts          # TypeScript interfaces and type definitions
     ├── utils/
-    │   ├── audio.ts
-    │   ├── i18n.ts
-    │   ├── storage.ts
-    │   └── localTranslator.ts
+    │   ├── audio.ts          # Web Speech API and audio playback helpers
+    │   ├── i18n.ts           # Bilingual UI dictionary (English/Hindi)
+    │   ├── storage.ts        # LocalStorage state management helpers
+    │   └── localTranslator.ts# Client-side offline translation fallback engine
     ├── data/
-    │   ├── alphabetData.ts
-    │   └── signboardData.ts
+    │   ├── alphabetData.ts   # Kannada character sets (Swara, Vyanjana, Ottakshara)
+    │   └── signboardData.ts  # Verified Karnataka signboard corpus and keywords
     └── components/
         ├── Navbar.tsx
         ├── BottomNav.tsx
@@ -124,107 +108,94 @@ graph TD
 
 ---
 
-## 🚀 Installation & Setup
+## Installation and Setup
 
-1. **Clone the repository:**
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm (v9 or higher)
+
+### Setup Instructions
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/namma-kannada-ai.git
    cd namma-kannada-ai
    ```
 
-2. **Install dependencies:**
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. **Configure environment variables:**
-   Create a `.env` file in the root directory and add your Google Gemini API key:
+3. Configure environment variables:
+   Create a `.env` file in the project root directory based on the required configuration:
    ```env
    PORT=3000
-   GEMINI_API_KEY=your_google_ai_studio_api_key_here
+   GEMINI_API_KEY=your_google_ai_studio_api_key
    ```
 
-4. **Start the development server:**
+4. Start the development server:
    ```bash
    npm run dev
    ```
-   Open your browser and navigate to `http://localhost:3000`.
+
+5. Access the application in your browser at `http://localhost:3000`.
 
 ---
 
-## 🔌 API Endpoints
+## Environment Variables
 
-### `POST /api/translate`
-Translates text from English or Hindi into spoken Kannada with deep grammatical breakdown.
+The application requires the following environment variables to run with live AI capabilities:
 
-**Request Body:**
-```json
-{
-  "text": "Where is the bus stop?",
-  "sourceLang": "en",
-  "mode": "standard"
-}
-```
-
-**Response:**
-```json
-{
-  "kannada_text": "ಬಸ್ ನಿಲ್ದಾಣ ಎಲ್ಲಿದೆ?",
-  "transliteration": "Bus nildāṇa ellide?",
-  "source_language_meaning": "Where is the bus stop?",
-  "word_breakdown": [
-    { "kannada": "ಬಸ್", "transliteration": "Bus", "meaning": "Bus" },
-    { "kannada": "ನಿಲ್ದಾಣ", "transliteration": "nildāṇa", "meaning": "station / stop" },
-    { "kannada": "ಎಲ್ಲಿದೆ", "transliteration": "ellide", "meaning": "where is (it)?" }
-  ],
-  "grammar_explanation": "Kannada follows Subject-Object-Verb (SOV) sentence order where question words appear at the end.",
-  "usage_context": "Everyday commuting query across Karnataka.",
-  "polite_variant": "ದಯವಿಟ್ಟು, ಬಸ್ ನಿಲ್ದಾಣ ಎಲ್ಲಿದೆ ಎಂದು ತಿಳಿಸುತ್ತೀರಾ?",
-  "isLiveAI": false,
-  "provider": "Curated Verified Kannada Knowledge Base"
-}
-```
+| Variable | Description | Required |
+| :--- | :--- | :--- |
+| `PORT` | Port number for the Express server (defaults to `3000`) | No |
+| `GEMINI_API_KEY` | API key for Google Gemini model access | Yes (for AI features) |
 
 ---
 
-## 🏆 Hackathon Judging Alignment
+## Usage Guide
 
-| Evaluation Criteria | How Namma Kannada AI Delivers |
-| :--- | :--- |
-| **Functionality** | Fully operational translator, 10-scenario conversational roleplay tutor, HTML5 writing lab canvas, and signboard OCR scanner. |
-| **Technical Execution** | Robust full-stack TypeScript architecture integrating `@google/genai` (Gemini 3.8 Flash) with a multi-tier offline fallback engine. |
-| **Usability** | Mobile-first responsive UI, fluid vertical scrolling, one-tap audio pronunciation, and bilingual onboarding (English/Hindi). |
-| **Innovation** | Culturally authentic Dravidian grammar rules (honorific suffix `-ru`), local Bengaluru colloquialisms, and instant signboard decoding. |
-
----
-
-## 🗺️ Future Roadmap
-
-- [ ] **Offline PWA Support:** Full ServiceWorker caching for completely offline rural travel.
-- [ ] **Dialect Switcher:** Explore regional variations (Mysuru Kannada, Mangalurean Tulu/Kannada blends, North Karnataka dialect).
-- [ ] **Gamified Quizzes:** Daily leaderboards, XP badges, and community phrasebook contributions.
-- [ ] **Voice-to-Voice Live Chat:** Real-time speech streaming with Gemini Live API.
+1. **Onboarding**: Upon first launch, select your primary source language (English or Hindi), proficiency level, and daily goal.
+2. **Translation**: Navigate to the Translator tab to enter English or Hindi phrases and receive instant Kannada script, transliteration, and grammatical breakdowns.
+3. **Conversational Roleplay**: Choose a scenario (such as interacting with an auto driver) in the Tutor tab to practice spoken dialogue.
+4. **Writing Lab**: Select characters from the alphabet list to practice stroke tracing on the interactive canvas.
+5. **Phrasebook**: Save frequently used sentences for quick offline revision.
 
 ---
 
-## 🤝 Contributing
+## API Integration
 
-Contributions are welcome! Please feel free to submit a Pull Request or open an Issue for bug reports and feature requests.
+The Express backend exposes RESTful endpoints consumed by the frontend:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📜 License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
+- `POST /api/translate`: Accepts text, source language, and translation mode; returns structured translation results.
+- `POST /api/chat`: Handles conversational roleplay interactions with persona-specific prompts.
+- `GET /api/tts`: Streams audio speech synthesis for Kannada text.
+- `GET /api/health`: Reports server status and API key availability.
 
 ---
 
-<div align="center">
-Made with ❤️ for Karnataka and language learners worldwide.
-</div>
+## Error Handling and Fallback Mechanisms
+
+To ensure uninterrupted user experience during network latency or API rate limits:
+- **API Timeout Control**: Outbound Gemini requests implement strict timeouts.
+- **Corpus Matching**: Common phrases and regulatory signboards are resolved instantly from local dictionaries.
+- **Client-Side Fallback**: If the backend is unreachable, `localTranslator.ts` synthesizes linguistic breakdowns and transliterations directly in the browser.
+
+---
+
+## Development and Contribution
+
+Contributions from developers and language enthusiasts are welcome.
+
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/name`).
+3. Commit your changes following conventional commits (`git commit -m 'feat: add new dialect support'`).
+4. Push to the branch (`git push origin feature/name`).
+5. Open a Pull Request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
