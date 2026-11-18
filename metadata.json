@@ -1,0 +1,6 @@
+{
+  "name": "Namma Kannada AI",
+  "description": "An interactive, AI-assisted Kannada learning platform for English and Hindi speakers featuring translation, conversation practice, interactive writing lab, survival mode, and personalized revision.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
